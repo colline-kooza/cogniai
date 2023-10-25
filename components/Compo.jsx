@@ -26,22 +26,22 @@ import SearchForm from "@/components/SearchForm";
 import HomeData from "@/components/HomeData";
 import getChats from "@/libs/getChats";
 
-export default function page() {
+export default function Compo() {
   return (
-    <div className="w-full h-screen overflow-hidden md:h-[86vh] max-h-[80vh] bg-[#222327] lg:rounded-[20px] md:rounded-[20px] rounded-[0px] flex flex-col items-start gap-2">
-      <div className="w-[100%] bg-Bg rounded-[20px] font-[500] text-white flex flex-col gap-5 items-center max-h-[100%] px-3 bg-red-600">
-        <div className="flex flex-col gap-2 items-start flex-wrap">
-          <div className="w-[100%] flex justify-between items-center">
+    <div classNameName="w-full overflow-hidden md:h-[86vh] max-h-[80vh] bg-[#222327] lg:rounded-[20px] md:rounded-[20px] rounded-[0px]">
+      <div classNameName="w-[100%] bg-Bg rounded-[20px] font-[500] text-white flex flex-col gap-5 items-center max-h-[100%] px-3">
+        <div classNameName="flex flex-col gap-2 p-[1.5rem]">
+          <div classNameName="w-[100%] flex justify-between items-center">
             <Image src="/badi.gif" alt="" width={40} height={20} />
-            <p className="">
+            <p classNameName="">
               <VscRefresh size={24} color="lightblue" />
             </p>
           </div>
           <div>
-            <h2 className="text-[2.5rem] text-[#e3e3e3] font-[700]">
+            <h2 classNameName="text-[2.5rem] text-[#e3e3e3] font-[700]">
               Hello again
             </h2>
-            <p className="text-[#abadb1] text-[21px] font-[500]">
+            <p classNameName="text-[#abadb1] text-[21px] font-[500]">
               Tell me what’s on your mind or pick a suggestion. I have
               limitations and won't always get it right, but your feedback will
               help me to improve.
@@ -49,19 +49,6 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div className="flex w-full gap-3 bg-red-800">
-        <div className="w-[300px] lg:w-[45%] h-[200px] bg-green-400"></div>
-        <div className="w-[300px] lg:w-[45%] h-[200px] bg-red-400"></div>
-        <div className="w-[300px] lg:w-[45%] h-[200px] bg-blue-400"></div>
-      </div>
     </div>
   );
-}
-
-{
-  /* <div className="flex w-full gap-3">
-  <div className="w-[300px] lg:w-[45%] h-[200px] bg-green-400"></div>
-  <div className="w-[300px] lg:w-[45%] h-[200px] bg-red-400"></div>
-  <div className="w-[300px] lg:w-[45%] h-[200px] bg-blue-400"></div>
-</div>; */
 }

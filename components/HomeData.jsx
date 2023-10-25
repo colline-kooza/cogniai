@@ -27,10 +27,10 @@ import SearchForm from "@/components/SearchForm";
 const myFont = localFont({ src: "../sans2.woff2" });
 const myFont2 = localFont({ src: "../sans2.woff2" });
 export default function HomeData({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
-    <div className="w-[100%] h-[86vh] bg-primaryColorbggg rounded-[20px]  ">
-      <div className="h-[85vh] rounded-[20px] font-[500] text-white flex flex-col items-center">
+    <div className="w-[40%] lg:w-[60%] h-[100vh]   md:h-[86vh] lg:h-[86vh] bg-primaryColorbggg rounded-[20px]  ">
+      <div className="h-[85vh] rounded-[20px] font-[500] flex flex-col items-center">
         <ScrollArea className="w-[100%] h-[100%] px-[2.5rem] pb-[5rem] flex bg-slate-700 rounded-lg">
           {data.map((conv) => {
             return conv.conversations.map((chat) => {
@@ -69,8 +69,6 @@ export default function HomeData({ data }) {
                         <Image
                           src="/badi.gif"
                           alt=""
-                          // fill
-                          // className="object-cover w-full h-full"
                           width={40}
                           height={20}
                           objectFit="cover"
@@ -111,7 +109,6 @@ export default function HomeData({ data }) {
           })}
         </ScrollArea>
       </div>
-     
     </div>
   );
 }

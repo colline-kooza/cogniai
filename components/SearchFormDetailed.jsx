@@ -20,14 +20,11 @@ export default function SearchFormDetailed({ transporter }) {
     });
     if (res.ok) {
       const resultJSON = await res.json();
-      // console.log(resultJSON);
       const botData = JSON.parse(resultJSON.botData);
-      // console.log(botData);
       const botDataObject = {
         prompt: botData.prompt,
         response: botData.response,
       };
-      // console.log(botDataObject);
       const response = await fetch("http://localhost:3000/api/chats", {
         method: "POST",
         headers: {
@@ -35,7 +32,6 @@ export default function SearchFormDetailed({ transporter }) {
         },
         body: JSON.stringify(botDataObject),
       });
-      // console.log(response);
       setLoading(false);
       reset();
     } else {

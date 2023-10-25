@@ -24,7 +24,6 @@ export async function GET() {
 export async function POST(request) {
   try {
     const { prompt, response, chatId } = await request.json();
-    console.log(prompt, response, chatId);
     if (chatId) {
       const conversation = await db.conversation.create({
         data: {
@@ -33,7 +32,6 @@ export async function POST(request) {
           response,
         },
       });
-      console.log(conversation);
       return NextResponse.json(
         {
           conversation,
@@ -54,7 +52,6 @@ export async function POST(request) {
           response,
         },
       });
-      console.log(conversation, chat);
       return NextResponse.json(conversation);
     }
   } catch (error) {

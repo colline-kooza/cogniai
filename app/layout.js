@@ -14,25 +14,23 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en ">
-      <body class="" className={inter.className}>
-        <NavBar />
+      <body
+        class="relative"
+        className={inter.className}
+        suppressHydrationWarning
+      >
+        <div className="w-[100%] overflow-hidden">
+          <NavBar />
+        </div>
         <div className="flex">
-          <div className="w-[23%] relative ">
+          <div className="w-[23%] relative hidden md:block lg:block overflow-hidden">
             <SideBar />
-            <div className="w-[100%] h-[10%] absolute bottom-[10%] text-white text-[10px]  py-[.1rem] px-[2rem] shadow-lg shadow-indigo-500/10 flex flex-col gap-2">
-              <h2>• Kampala, Uganda</h2>
-              <p className="text-coloR">
-                From your IP address • Update location
-              </p>
-            </div>
           </div>
-          <div className=" sm:w-[75%] relative">
-            <main className="min-h-screen p-[1rem]">
-              {children}
-              <div className="w-[73%] h-[14vh] bg-primaryColorbggg  fixed bottom-3 rounded-b-[39px]">
-                <SearchForm />
-              </div>
-            </main>
+          <div>
+            <main className="min-h-full overflow-hidden">{children}</main>
+            {/* <div className="lg:w-[72%] md:w-[70%] w-[100%] h-[18vh] md:h-[14vh] lg:h-[14vh] bg-[#222327] fixed bottom-0 md:bottom-3 lg:bottom-3 rounded-b-[1px] md:rounded-b-[39px] lg:rounded-b-[39px] overflow-hidden">
+              <SearchForm />
+            </div> */}
           </div>
         </div>
       </body>
