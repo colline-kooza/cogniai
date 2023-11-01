@@ -48,6 +48,7 @@ export default function SearchForm() {
           });
           if (response.ok) {
             window.location.reload();
+            reset();
           }
         } else {
           const response = await fetch("http://localhost:3000/api/chats", {
@@ -62,10 +63,10 @@ export default function SearchForm() {
             const responseId = resultJSON.chatId;
             setChatId(responseId);
             router.push(`/chat/DetailedPage/${responseId}`);
+            reset();
           }
         }
         setLoading(false);
-        reset();
       } else {
         throw new Error("something went wrong");
       }

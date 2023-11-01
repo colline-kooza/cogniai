@@ -28,7 +28,7 @@ export default async function SideBar() {
 
           <ScrollArea className="overflow-auto max-h-[55vh]">
             <div className="text-white font-[500] text-[14px] flex flex-col gap-3">
-              <p>
+              {/* <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
                 w{" "}
               </p>
@@ -62,22 +62,26 @@ export default async function SideBar() {
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
                 w{" "}
-              </p>
-              {/* {chats?.map((chat) => {
-                return (
-                  <Link
-                    key={chat.id}
-                    href={`/chat/DetailedPage/${chat.id}`}
-                    className="flex gap-3 items-center line-clamp-1 rounded-lg"
-                  >
-                    <MdOutlineMessage
-                      className="bg-primaryColorbg  text-[20px] p-[5px]"
-                      size={25}
-                    />
-                    {chat.prompt}
-                  </Link>
-                );
-              })} */}
+              </p> */}
+              {chats.length > 0 ? (
+                chats.map((chat) => {
+                  return (
+                    <Link
+                      key={chat.id}
+                      href={`/chat/DetailedPage/${chat.id}`}
+                      className="flex gap-3 items-center line-clamp-1 rounded-lg"
+                    >
+                      <MdOutlineMessage
+                        className="bg-primaryColorbg  text-[20px] p-[5px]"
+                        size={25}
+                      />
+                      {chat.prompt}
+                    </Link>
+                  );
+                })
+              ) : (
+                <h2> some thing went wrong😒😒</h2>
+              )}
             </div>
           </ScrollArea>
         </div>

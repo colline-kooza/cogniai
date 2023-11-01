@@ -11,9 +11,9 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en ">
-      <body className={inter.className}>
-        <main className="">{children}</main>
-      </body>
+      {/* <body className={inter.className}> */}
+      <main className="">{children}</main>
+      {/* </body> */}
     </html>
   );
 }
