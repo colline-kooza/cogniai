@@ -9,7 +9,7 @@ export async function GET(request, { params: { id } }) {
         conversations: true,
       },
     });
-    console.log(chat);
+    // console.log(chat);
     if (!chat) {
       return NextResponse.json(
         {

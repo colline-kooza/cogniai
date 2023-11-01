@@ -1,16 +1,18 @@
-"use client";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { MdOutlineMessage } from "react-icons/md";
 import { IoIosAdd } from "react-icons/io";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import getChats from "@/libs/getChats";
+import { auth } from "@clerk/nextjs";
 const myFont = localFont({ src: "../ProductSans-Light.ttf" });
 
 export default async function SideBar() {
-  // const chats = await getChats();
+  const { userId } = auth();
+  const chats = await getChats(userId);
+  console.log(chats);
   return (
-    <div className={myFont.className} class="bg-red-900">
+    <div className={myFont.className} class="">
       <div className="px-[2rem] py-[10px] flex flex-col gap-5 overflow-y-auto">
         <div className="w-[60%]">
           <Link
@@ -65,7 +67,7 @@ export default async function SideBar() {
                 return (
                   <Link
                     key={chat.id}
-                    href={`/DetailedPage/${chat.id}`}
+                    href={`/chat/DetailedPage/${chat.id}`}
                     className="flex gap-3 items-center line-clamp-1 rounded-lg"
                   >
                     <MdOutlineMessage
@@ -79,7 +81,7 @@ export default async function SideBar() {
             </div>
           </ScrollArea>
         </div>
-        <div className="w-[100%] h-[10%] absolute bottom-[10%] text-white text-[10px]  py-[.1rem] px-[2rem] shadow-lg shadow-indigo-500/10 flex-col gap-2 lg:flex ">
+        <div className="w-[100%] h-[10%] absolute bottom-[9%] text-blue-200 text-[12px]  py-[.1rem] px-[1rem] shadow-lg  flex-col gap-2 lg:flex ">
           <h2>• Kampala, Uganda</h2>
           <p className="text-coloR">From your IP address • Update location</p>
         </div>

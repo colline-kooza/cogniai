@@ -6,7 +6,9 @@ import { LuImagePlus } from "react-icons/lu";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@clerk/nextjs";
 export default function SearchForm() {
+  const { userId } = useAuth();
   const router = useRouter();
 
   const [chatId, setChatId] = useState(null);
@@ -29,6 +31,7 @@ export default function SearchForm() {
         const botDataObject = {
           prompt: botData.prompt,
           response: botData.response,
+          userId,
         };
         if (chatId) {
           const conv = {
@@ -58,7 +61,7 @@ export default function SearchForm() {
             const resultJSON = await response.json();
             const responseId = resultJSON.chatId;
             setChatId(responseId);
-            router.push(`/DetailedPage/${responseId}`);
+            router.push(`/chat/DetailedPage/${responseId}`);
           }
         }
         setLoading(false);
@@ -78,7 +81,7 @@ export default function SearchForm() {
       >
         <LuImagePlus size={20} className="font-300 text-gray-300" />
         <input
-          className="w-[95%] h-[8vh] relative p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0  bg-[#131314] text-white"
+          className="w-[95%] md:w-[90%] h-[8vh] relative p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0  bg-[#131314] text-white"
           type="search"
           placeholder="Enter a prompt here"
           {...register("search")}

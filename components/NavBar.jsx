@@ -1,13 +1,12 @@
-// "use client";
-// import React, { useState } from "react";
-import { FiMenu } from "react-icons/fi";
+"use client";
 import { GiBackwardTime } from "react-icons/gi";
 import { PiPuzzlePieceBold } from "react-icons/pi";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { CgMenuGridR } from "react-icons/cg";
-import { BiSolidUserCircle } from "react-icons/bi";
+import { UserButton } from "@clerk/nextjs";
 import SideBarBtn from "./SideBarBtn";
+import { usePathname } from "next/navigation";
 
 export default async function NavBar() {
   return (
@@ -19,18 +18,21 @@ export default async function NavBar() {
         </h2>
         <p className="text-[9px] lg:text-[12px] experiment">Experiment</p>
       </div>
-      <div className="lg:flex md:flex flex gap-6 text-[18px]">
+      <div className="lg:flex md:flex flex gap-6 text-[18px] items-center">
         <GiBackwardTime
           className="flex md:hidden gap-6 text-[18px] lg:hidden items-center"
           size={25}
         />
-        <BiSolidUserCircle className="text-green-600 text-[30px] flex md:hidden gap-6 lg:hidden items-center" />
-        <GiBackwardTime className="lg:flex md:flex  text-[18px] hidden" />
-        <PiPuzzlePieceBold className="lg:flex md:flex  text-[18px] hidden" />
-        <BsFillPatchQuestionFill className="lg:flex md:flex  text-[18px] hidden" />
-        <FiSettings className="lg:flex md:flex  text-[18px] hidden" />
-        <CgMenuGridR className="lg:flex md:flex  text-[18px] hidden" />
-        <BiSolidUserCircle className="text-green-400 text-[30px] lg:flex md:flex  hidden" />
+
+        <GiBackwardTime className="lg:flex md:flex  text-[25px] hidden" />
+        <PiPuzzlePieceBold className="lg:flex md:flex  text-[25px] hidden" />
+        <BsFillPatchQuestionFill className="lg:flex md:flex  text-[25px] hidden" />
+        <FiSettings className="lg:flex md:flex  text-[25px] hidden" />
+        <CgMenuGridR className="lg:flex md:flex  text-[25px] hidden" />
+        <UserButton
+          afterSignOutUrl="/"
+          className=" text-[25px] lg:flex md:flex  hidden"
+        />
       </div>
     </div>
   );

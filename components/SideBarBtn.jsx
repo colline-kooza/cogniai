@@ -12,9 +12,10 @@ export default function SideBarBtn() {
   }
   return (
     <div className="flex flex-col">
-      <button onClick={changeShow}>
+      <button className="text-white" onClick={changeShow}>
         <FiMenu size={25} />
       </button>
+
       {showSideBar ? (
         <div className="lg:hidden absolute left-[0%] bg-white top-[14%] h-[100vh] z-[120] w-[100%] ">
           <MenuSide />

@@ -27,13 +27,12 @@ export async function POST(request) {
     const result = await response.json();
     const botDataResult = await result.MPT;
 
-    console.log(botDataResult);
+    // console.log(botDataResult);
     const botData = {
       prompt: search,
       response: botDataResult,
     };
 
-    console.log(botData);
     return NextResponse.json({
       botData,
     });
