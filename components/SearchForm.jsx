@@ -102,7 +102,7 @@ export default function SearchForm() {
           )}
         </div>
       </form>
-      <p className="text-gray-400 text-[13px] md:text-[10px] lg:text-[10px] flex items-center justify-center text-center">
+      <p className="text-gray-400 text-sm md:text-[10px] lg:text-[10px] flex items-center justify-center text-center">
         ColAi may display inaccurate or offensive information that doesn’t
         represent collinz views.
       </p>
