@@ -10,7 +10,7 @@ export async function POST(request) {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "X-RapidAPI-Key": NEXT_PUBLIC_KEYS,
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_KEYS,
         "X-RapidAPI-Host": "open-ai21.p.rapidapi.com",
       },
       body: JSON.stringify({

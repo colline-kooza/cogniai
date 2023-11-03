@@ -1,5 +1,5 @@
 export default async function getSingleChat(id) {
-  const apiChats = NEXT_PUBLIC_CHATS;
+  const apiChats = process.env.NEXT_PUBLIC_CHATS;
   const response = await fetch(`${apiChats} /${id}`, {
     cache: "no-store",
   });
