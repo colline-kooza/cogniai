@@ -21,11 +21,12 @@ import { CgMoveRight } from "react-icons/cg";
 import { LuMoreVertical } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
 import getSingleChat from "@/libs/getSingleChat";
+import { UserButton } from "@clerk/nextjs";
 
 export default async function DetailedPage({ params: { id } }) {
   const singleChat = await getSingleChat(id);
   const conversations = singleChat.conversations;
-  // console.log(conversations);
+  
 
   return (
     <div className="">
@@ -40,7 +41,10 @@ export default async function DetailedPage({ params: { id } }) {
                 <div className="lg:h-[80vh] sm:h-[80vh] rounded-[20px] font-[500] text-white flex flex-col items-center">
                   <div className="flex justify-between py-[2rem] w-[100%]">
                     <div className="flex items-center gap-[.8rem]">
-                      <BiSolidUserCircle className="text-green-400 text-[30px]" />
+                      <UserButton
+                        afterSignOutUrl="/"
+                        className=" text-[25px] lg:flex md:flex  hidden"
+                      />
                       <h2>{conv.prompt}</h2>
                     </div>
                     <a href="/chat">
@@ -109,7 +113,7 @@ export default async function DetailedPage({ params: { id } }) {
             );
           })
         ) : (
-          <div className="w-[100%] h-[100vh] text-center py-4 flex items-center justify-center text-blue-700 font-[400]">
+          <div className="w-[100%] h-[100vh] text-center py-4 flex items-center justify-center text-orange-700 font-[400]">
             <h1> some thing wrong happened , try Again 😒😒</h1>
           </div>
         )}

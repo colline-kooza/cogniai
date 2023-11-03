@@ -48,7 +48,7 @@ export default function SearchForm() {
           });
           if (response.ok) {
             window.location.reload();
-            reset();
+            // reset();
           }
         } else {
           const response = await fetch("http://localhost:3000/api/chats", {
@@ -64,6 +64,8 @@ export default function SearchForm() {
             setChatId(responseId);
             router.push(`/chat/DetailedPage/${responseId}`);
             reset();
+          }else{
+            setLoading(true);
           }
         }
         setLoading(false);
@@ -81,11 +83,12 @@ export default function SearchForm() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <LuImagePlus size={20} className="font-300 text-gray-300" />
-        <input
+        <textarea
           className="w-[95%] md:w-[90%] h-[8vh] relative p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0  bg-[#131314] text-white"
           type="search"
           placeholder="Enter a prompt here"
           {...register("search")}
+          // rows=""
         />
         <button type="submit">
           <GoPaperAirplane

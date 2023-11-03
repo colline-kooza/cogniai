@@ -15,12 +15,8 @@ export default async function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en ">
-        <body
-          class="relative bg-black"
-          className={inter.className}
-          suppressHydrationWarning
-        >
-          <div className="w-[100%] overflow-hidden">
+        <body class="relative bg-black" className={inter.className}>
+          <div className="w-[100%] ">
             <NavBar />
           </div>
           <div className="flex">
