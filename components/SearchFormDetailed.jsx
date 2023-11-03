@@ -11,7 +11,7 @@ export default function SearchFormDetailed({ transporter }) {
   async function onSubmit(data) {
     setLoading(true);
     const search = data.search;
-    const res = await fetch("http://localhost:3000/api/chat", {
+    const res = await fetch(process.env.NEXT_PUBLIC_CHATS, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export default function SearchFormDetailed({ transporter }) {
         prompt: botData.prompt,
         response: botData.response,
       };
-      const response = await fetch("http://localhost:3000/api/chats", {
+      const response = await fetch(process.env.NEXT_PUBLIC_CHATS, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

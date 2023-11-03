@@ -18,7 +18,7 @@ export default function SearchForm() {
     setLoading(true);
     const search = data.search;
     try {
-      const res = await fetch("http://localhost:3000/api/chat", {
+      const res = await fetch(process.env.NEXT_PUBLIC_CHAT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export default function SearchForm() {
             chatId,
           };
 
-          const response = await fetch("http://localhost:3000/api/chats", {
+          const response = await fetch(process.env.NEXT_PUBLIC_CHATS, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export default function SearchForm() {
             // reset();
           }
         } else {
-          const response = await fetch("http://localhost:3000/api/chats", {
+          const response = await fetch(process.env.NEXT_PUBLIC_CHAT, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export default function SearchForm() {
             setChatId(responseId);
             router.push(`/chat/DetailedPage/${responseId}`);
             reset();
-          }else{
+          } else {
             setLoading(true);
           }
         }
