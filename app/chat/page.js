@@ -14,7 +14,13 @@ export default function page() {
       <div className="lg:h-[35%] md:h-[30%] h-[40%]">
         <div className="flex flex-col gap-2 items-start flex-wrap">
           <div className="w-[100%] flex justify-between items-center">
-            <Image src="/badi.gif" alt="" width={40} height={20} />
+            <Image
+              className="w-auto h-auto"
+              src="/badi.gif"
+              alt=""
+              width={40}
+              height={20}
+            />
             <p className="">
               <VscRefresh size={24} color="lightblue" />
             </p>

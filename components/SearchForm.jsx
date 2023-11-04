@@ -95,11 +95,11 @@ export default function SearchForm() {
             size={20}
           />
         </button>
-        <div className="absolute right-[17%] md:right-[7%] lg:right-[7%] top-[31px] lg:top-[25px]">
+        <div className="absolute right-[17%] md:right-[7%] lg:right-[7%] top-[30px] lg:top-[25px]">
           {loading ? (
             <div className="">
               <Image
-                className="w-auto h-auto"
+                className="w-[40px] h-[40px]"
                 src="/loading.gif"
                 alt=""
                 width={30}

@@ -72,6 +72,7 @@ export default async function DetailedPage({ params: { id } }) {
                     <div className="flex px-[1rem] lg:px-[2rem] justify-between ">
                       <div className="relative max-w-[50px] lg:max-w-[55px] max-h-[400px] lg:max-h-[55px]">
                         <Image
+                          className="w-auto h-auto"
                           src="/badi.gif"
                           alt=""
                           width={30}
