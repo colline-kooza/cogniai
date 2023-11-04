@@ -61,9 +61,7 @@ export default function SearchForm() {
             const resultJSON = await response.json();
             const responseId = resultJSON.chatId;
             setChatId(responseId);
-            router.push(
-              `${process.env.NEXT_PUBLIC_LOCALHOST}/chat/DetailedPage/${responseId}`
-            );
+            router.push(`${process.env.NEXT_PUBLIC_LOCALHOST}/${responseId}`);
             reset();
           } else {
             setLoading(true);
