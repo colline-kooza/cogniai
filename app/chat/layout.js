@@ -14,8 +14,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en ">
-        <body class="relative bg-black" className={inter.className}>
+        {/* <body class="relative bg-black" className={inter.className}> */}
           <div className="w-[100%] ">
             <NavBar />
           </div>
@@ -32,8 +31,7 @@ export default async function RootLayout({ children }) {
               </div>
             </div>
           </div>
-        </body>
-      </html>
+        {/* </body> */}
     </ClerkProvider>
   );
 }

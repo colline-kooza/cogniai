@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 export default function DeleteBtn() {

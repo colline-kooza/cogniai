@@ -4,6 +4,5 @@ export default async function getChats(userId) {
     cache: "no-store",
   });
   const chats = await response.json();
-  console.log(chats);
   return chats;
 }

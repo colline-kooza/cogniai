@@ -26,7 +26,6 @@ import { UserButton } from "@clerk/nextjs";
 export default async function DetailedPage({ params: { id } }) {
   const singleChat = await getSingleChat(id);
   const conversations = singleChat.conversations;
-  
 
   return (
     <div className="">

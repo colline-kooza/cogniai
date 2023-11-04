@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FiEdit2 } from "react-icons/fi";
 
 export default function EditeBtn() {

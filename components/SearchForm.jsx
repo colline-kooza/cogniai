@@ -47,11 +47,12 @@ export default function SearchForm() {
             body: JSON.stringify(conv),
           });
           if (response.ok) {
+            // console.log(response);
             window.location.reload();
             // reset();
           }
         } else {
-          const response = await fetch(process.env.NEXT_PUBLIC_CHAT, {
+          const response = await fetch(process.env.NEXT_PUBLIC_CHATS, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -88,7 +89,7 @@ export default function SearchForm() {
           type="search"
           placeholder="Enter a prompt here"
           {...register("search")}
-          // rows=""
+          required
         />
         <button type="submit">
           <GoPaperAirplane
@@ -96,10 +97,16 @@ export default function SearchForm() {
             size={20}
           />
         </button>
-        <div className="absolute right-[17%] md:right-[7%] lg:right-[7%] top-[29px] lg:top-[25px]">
+        <div className="absolute right-[17%] md:right-[7%] lg:right-[7%] top-[31px] lg:top-[25px]">
           {loading ? (
             <div className="">
-              <Image src="/loading.gif" alt="" width={30} height={20} />
+              <Image
+                className="w-auto h-auto"
+                src="/loading.gif"
+                alt=""
+                width={30}
+                height={20}
+              />
             </div>
           ) : (
             <AiOutlineAudio color="white" size={22} />

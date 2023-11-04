@@ -25,29 +25,8 @@ export default async function MenuSide() {
             New chat
           </Link>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-5">
           <h3 className="text-white text-[13px] font-[800]">Recent</h3>
-          <h1>hii</h1>
-          {/* 
-          <ScrollArea className="overflow-auto max-h-[55vh]">
-            <div className="text-white font-[500] text-[14px] flex flex-col gap-3">
-              {chats?.map((chat) => {
-                return (
-                  <Link
-                    key={chat.id}
-                    href={`/DetailedPage/${chat.id}`}
-                    className="flex gap-3 items-center line-clamp-1 rounded-lg lin"
-                  >
-                    <MdOutlineMessage
-                      className="bg-primaryColorbg  text-[20px] p-[5px] shrink-0"
-                      size={25}
-                    />
-                    <p className="line-clamp-2">{chat.prompt}</p>
-                  </Link>
-                );
-              })}
-            </div>
-          </ScrollArea> */}
         </div>
         <div className="w-[80%] h-[10%] absolute bottom-[6%]  bg-gradient-to-r from-pink-500 via-pink-600 to-blue-500 bg-clip-text text-transparent  text-[10px]  py-[.1rem] px-[.3rem] flex-col gap-3 lg:flex ">
           <h2>• Kampala, Uganda</h2>

@@ -66,7 +66,7 @@ export default function HomeData({ data }) {
                     </div>
                     <div className="flex px-[2rem] justify-between">
                       <div className="relative max-w-[50px] lg:max-w-[55px] max-h-[400px] lg:max-h-[55px]">
-                        <Image
+                        <img
                           src="/badi.gif"
                           alt=""
                           width={40}

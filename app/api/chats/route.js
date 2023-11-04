@@ -13,7 +13,7 @@ export async function GET(request, { searchParams }) {
         conversations: true,
       },
     });
-    console.log(chats);
+    // console.log(chats);
     return NextResponse.json(chats);
   } catch (error) {
     return NextResponse.json(
@@ -39,7 +39,7 @@ export async function POST(request) {
           response,
         },
       });
-      // console.log(conversation);
+      console.log(conversation);
       return NextResponse.json(
         {
           conversation,

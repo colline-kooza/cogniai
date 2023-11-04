@@ -34,7 +34,7 @@ export default async function SideBar() {
                       <Link
                         key={chat.id}
                         href={`/chat/DetailedPage/${chat.id}`}
-                        className="flex gap-3 items-center line-clamp-1 rounded-lg hover:bg-[#7e57c16b] hover:rounded-md"
+                        className="flex gap-3 items-center line-clamp-1 rounded-lg hover:bg-[#7e57c16b] hover:rounded-md hover:animate-pulse"
                       >
                         <MdOutlineMessage
                           className="bg-primaryColorbg  text-[20px] p-[5px] shrink-0"
@@ -47,7 +47,7 @@ export default async function SideBar() {
                   );
                 })
               ) : (
-                <h2> some thing went wrong😒😒</h2>
+                <h2 className="animate-bounce"> some thing went wrong😒😒</h2>
               )}
             </div>
           </ScrollArea>

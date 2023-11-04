@@ -1,5 +1,4 @@
 import { TypedScript } from "@/components/TypedScript";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
