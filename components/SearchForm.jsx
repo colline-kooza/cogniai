@@ -47,9 +47,7 @@ export default function SearchForm() {
             body: JSON.stringify(conv),
           });
           if (response.ok) {
-            // console.log(response);
             window.location.reload();
-            // reset();
           }
         } else {
           const response = await fetch(process.env.NEXT_PUBLIC_CHATS, {
@@ -63,7 +61,9 @@ export default function SearchForm() {
             const resultJSON = await response.json();
             const responseId = resultJSON.chatId;
             setChatId(responseId);
-            router.push(`/chat/DetailedPage/${responseId}`);
+            router.push(
+              `${process.env.NEXT_PUBLIC_LOCALHOST}/chat/DetailedPage/${responseId}`
+            );
             reset();
           } else {
             setLoading(true);
