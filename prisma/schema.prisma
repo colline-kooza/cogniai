@@ -8,17 +8,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Chat{
-  userId  String
-   id      Int      @id @default(autoincrement()) @map(name: "id")
-   prompt String
-   conversations Conversation[]
+model Chat {
+  userId        String
+  id            Int         @id @default(autoincrement()) @map(name: "id")
+  prompt        String
+  conversations Conversation[] 
 }
-
-model Conversation{
-    id      Int      @id @default(autoincrement())
-    prompt String
-    response String
-    chatId Int 
-    chat Chat @relation(fields: [chatId],references: [id])
+model Conversation {
+  id      Int      @id @default(autoincrement())
+  prompt  String
+  response String
+  chatId  Int
+  chat    Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
 }

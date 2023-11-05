@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import getChats from "@/libs/getChats";
 import { auth } from "@clerk/nextjs";
 import DropDown from "./DropDown";
+import DropDownSide from "./DropDownSide";
 const myFont = localFont({ src: "../ProductSans-Light.ttf" });
 
 export default async function SideBar() {
@@ -25,7 +26,7 @@ export default async function SideBar() {
         </div>
         <div className="flex flex-col gap-6">
           <h3 className="text-gray-300 font-[500] text-[13px]">Recent</h3>
-          <ScrollArea className="overflow-auto max-h-[55vh]">
+          <ScrollArea className="overflow-auto min-h-[55vh]">
             <div className="text-white font-[500] text-[14px] flex flex-col gap-3">
               {chats.length > 0 ? (
                 chats.map((chat) => {
@@ -42,7 +43,10 @@ export default async function SideBar() {
                         />
                         {chat.prompt}
                       </Link>
-                      <DropDown className="md:block hidden lg:block" />
+                      <DropDownSide
+                        chatId={chat.id}
+                        className="md:block hidden lg:block"
+                      />
                     </div>
                   );
                 })

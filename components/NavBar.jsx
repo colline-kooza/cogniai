@@ -12,6 +12,7 @@ import getChats from "@/libs/getChats";
 export default async function NavBar() {
   const { userId } = auth();
   const chats = await getChats(userId);
+
   return (
     <div className="flex justify-between py-[.8rem] lg:py-[1rem] px-[1rem] lg:px-[2rem] items-center text-white primary overflow-hidden w-full m-auto ">
       <div className="flex text-[20px] lg:text-[20px] items-center gap-2 lg:gap-4 ">

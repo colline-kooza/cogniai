@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/main.scss";
 
 import { Inter } from "next/font/google";
@@ -12,6 +14,8 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en ">
       <body class="relative bg-black" className={inter.className}>
+        <ToastContainer />
+
         <main className="">{children}</main>
       </body>
     </html>

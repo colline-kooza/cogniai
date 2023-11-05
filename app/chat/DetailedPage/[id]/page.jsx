@@ -22,8 +22,14 @@ import { LuMoreVertical } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
 import getSingleChat from "@/libs/getSingleChat";
 import { UserButton } from "@clerk/nextjs";
+import { useState } from "react";
+import { useChat } from "@/components/Context";
+import Link from "next/link";
+import EditeBtn from "@/components/EditeBtn";
 
 export default async function DetailedPage({ params: { id } }) {
+  const { setChatId } = useChat();
+  setChatId(id);
   const singleChat = await getSingleChat(id);
   const conversations = singleChat.conversations;
 
@@ -38,17 +44,17 @@ export default async function DetailedPage({ params: { id } }) {
                 className="w-[100%] px-[.8rem] py-[1rem] rounded-lg "
               >
                 <div className="lg:h-[80vh] sm:h-[80vh] rounded-[20px] font-[500] text-white flex flex-col items-center">
-                  <div className="flex justify-between py-[2rem] w-[100%]">
-                    <div className="flex items-center gap-[.8rem]">
+                  <div className="flex py-[2rem] w-[100%] ">
+                    <div className="flex items-center gap-[.8rem] min-w-[100%]">
                       <UserButton
                         afterSignOutUrl="/"
                         className=" text-[25px] lg:flex md:flex  hidden"
                       />
-                      <h2>{conv.prompt}</h2>
+                      <EditeBtn
+                        initialValue={conv.prompt}
+                        onSave={(editedPrompt) => {}}
+                      />
                     </div>
-                    <a href="/chat">
-                      <FiEdit2 className="font-[700]" size={20} />
-                    </a>
                   </div>
                   <div className="flex flex-col justify-between rounded-[20px] sm:gap-[2rem] py-[2rem] h-[100%] bg-[#131314]">
                     <div className="flex justify-end mr-[1rem]">

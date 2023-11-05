@@ -1,15 +1,12 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 
 import { GrMoreVertical } from "react-icons/gr";
 import DeleteBtn from "./DeleteBtn";
 import EditeBtn from "./EditeBtn";
 import { useChat } from "./Context";
-// import { usePathname } from "next/navigation";
 
-export default function DropDown() {
-  const { chatId } = useChat();
+export default function DropDownSide({ chatId }) {
   const [popUp, setPop] = useState(false);
   function changePop() {
     setPop(!popUp);
