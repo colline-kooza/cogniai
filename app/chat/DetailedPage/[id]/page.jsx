@@ -5,16 +5,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import localFont from "next/font/local";
-import {
-  BiShareAlt,
-  BiSolidChevronDown,
-  BiSolidUserCircle,
-  BiSolidVolumeFull,
-} from "react-icons/bi";
+import { BiShareAlt, BiSolidVolumeFull } from "react-icons/bi";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
-import { FiEdit2 } from "react-icons/fi";
+
 import { FaRegThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { PiWarningCircleBold } from "react-icons/pi";
 import { CgMoveRight } from "react-icons/cg";
@@ -22,9 +16,7 @@ import { LuMoreVertical } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
 import getSingleChat from "@/libs/getSingleChat";
 import { UserButton } from "@clerk/nextjs";
-import { useState } from "react";
 import { useChat } from "@/components/Context";
-import Link from "next/link";
 import EditeBtn from "@/components/EditeBtn";
 
 export default async function DetailedPage({ params: { id } }) {
