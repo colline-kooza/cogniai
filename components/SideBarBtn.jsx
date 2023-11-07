@@ -62,7 +62,7 @@ export default function SideBarBtn({ chats }) {
                       );
                     })
                   ) : (
-                    <h2> something went wrong😒😒</h2>
+                    <h2>loading....</h2>
                   )}
                 </div>
               </div>

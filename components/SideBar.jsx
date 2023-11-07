@@ -51,7 +51,7 @@ export default async function SideBar() {
                   );
                 })
               ) : (
-                <h2 className="animate-bounce"> some thing went wrong😒😒</h2>
+                <h2 className="animate-bounce"> Loading...</h2>
               )}
             </div>
           </ScrollArea>
