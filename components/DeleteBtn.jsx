@@ -20,7 +20,6 @@ export default function DeleteBtn({ chatId }) {
       console.log(res);
       if (res.ok) {
         router.push("/chat");
-        // window.location.reload();
         toast("chat deleted successfully", {
           position: toast.POSITION.TOP_RIGHT,
         });

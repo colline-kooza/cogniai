@@ -33,6 +33,7 @@ export default function SearchForm() {
           response: botData.response,
           userId,
         };
+        console.log(botData);
         if (chatId) {
           const conv = {
             ...botDataObject,

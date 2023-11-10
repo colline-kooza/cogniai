@@ -8,7 +8,6 @@ import {
 import { BiShareAlt, BiSolidVolumeFull } from "react-icons/bi";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
-
 import { FaRegThumbsUp, FaThumbsDown } from "react-icons/fa";
 import { PiWarningCircleBold } from "react-icons/pi";
 import { CgMoveRight } from "react-icons/cg";
