@@ -64,11 +64,12 @@ export default function SearchForm() {
             setChatId(responseId);
             router.push(`${process.env.NEXT_PUBLIC_LOCALHOST}/${responseId}`);
             reset();
+            setLoading(false);
           } else {
             setLoading(true);
           }
         }
-        setLoading(false);
+        
       } else {
         throw new Error("something went wrong");
       }
