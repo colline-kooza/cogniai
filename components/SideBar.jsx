@@ -26,19 +26,19 @@ export default async function SideBar() {
         </div>
         <div className="flex flex-col gap-6">
           <h3 className="text-gray-300 font-[500] text-[13px]">Recent</h3>
-          <ScrollArea className="overflow-auto min-h-[55vh]">
+          <ScrollArea className="overflow-y-auto min-h-[55vh] ">
             <div className="text-white font-[500] text-[14px] flex flex-col gap-3">
-              {chats.length > 0 ? (
-                chats.map((chat) => {
+              {
+                chats && ( chats.map((chat) => {
                   return (
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center overflow-y-auto">
                       <Link
                         key={chat.id}
                         href={`/chat/DetailedPage/${chat.id}`}
                         className="flex gap-3 items-center line-clamp-1 rounded-lg hover:bg-[#7e57c16b] hover:rounded-md hover:animate-pulse"
                       >
                         <MdOutlineMessage
-                          className="bg-primaryColorbg  text-[20px] p-[5px] shrink-0"
+                          className="bg-primaryColorbg text-[20px] p-[5px] shrink-0"
                           size={25}
                         />
                         {chat.prompt}
@@ -49,10 +49,8 @@ export default async function SideBar() {
                       />
                     </div>
                   );
-                })
-              ) : (
-                <h2 className="animate-bounce"> Loading...</h2>
-              )}
+                }))
+              }
             </div>
           </ScrollArea>
         </div>

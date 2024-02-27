@@ -17,7 +17,6 @@ export default function DeleteBtn({ chatId }) {
       const res = await fetch(`${process.env.NEXT_PUBLIC_CHATS}/${chatId}`, {
         method: "DELETE",
       });
-      console.log(res);
       if (res.ok) {
         router.push("/chat");
         toast("chat deleted successfully", {

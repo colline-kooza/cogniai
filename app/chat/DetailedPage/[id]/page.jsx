@@ -26,15 +26,15 @@ export default async function DetailedPage({ params: { id } }) {
 
   return (
     <div className="">
-      <div className="w-[100%]overflow-hidden overflow-auto max-h-[80vh] bg-[#222327] gap-9 rounded-[20px]">
-        {conversations.length > 0 ? (
-          conversations.map((conv) => {
+      <div className="w-[100%]overflow-hidden overflow-auto max-h-[80vh] bg-[#0C0C0C] gap-9 rounded-[20px]">
+        {conversations?.length > 0 ? (
+          conversations?.map((conv) => {
             return (
               <ScrollArea
                 key={conv.id}
-                className="w-[100%] px-[.8rem] py-[1rem] rounded-lg "
+                className="w-[100%] px-[.8rem] py-[1rem] rounded-lg bg-[#0C0C0C]"
               >
-                <div className="lg:h-[80vh] sm:h-[80vh] rounded-[20px] font-[500] text-white flex flex-col items-center">
+                <div className="lg:min-h-[80vh] sm:h-[80vh] rounded-[20px] font-[500] text-white flex flex-col items-center">
                   <div className="flex py-[2rem] w-[100%] ">
                     <div className="flex items-center gap-[.8rem] min-w-[100%]">
                       <UserButton
@@ -47,25 +47,7 @@ export default async function DetailedPage({ params: { id } }) {
                       />
                     </div>
                   </div>
-                  <div className="flex flex-col justify-between rounded-[20px] sm:gap-[2rem] py-[2rem] h-[100%] bg-[#131314]">
-                    <div className="flex justify-end mr-[1rem]">
-                      <div></div>
-                      <div className="flex gap-[2rem] items-start">
-                        <Accordion
-                          type="single"
-                          collapsible
-                          className="w-full text-[14px] hidden "
-                        >
-                          <AccordionItem value="item-1">
-                            <AccordionTrigger className="font-[500]">
-                              View other drafts?
-                            </AccordionTrigger>
-                            <AccordionContent>loading...</AccordionContent>
-                          </AccordionItem>
-                        </Accordion>
-                        <BiSolidVolumeFull color="white  pt-[3rem]" size={24} />
-                      </div>
-                    </div>
+                  <div className="flex flex-col justify-between rounded-[20px] sm:gap-[2rem] py-[2rem] bg-[#011222] w-full">
                     <div className="flex px-[1rem] lg:px-[2rem] justify-between ">
                       <div className="relative max-w-[50px] lg:max-w-[55px] max-h-[400px] lg:max-h-[55px]">
                         <Image
@@ -78,7 +60,7 @@ export default async function DetailedPage({ params: { id } }) {
                         />
                       </div>
                       <div style={{ flex: 1 }}>
-                        <h4 className="px-[9px] pb-[4rem] text-[1rem]">
+                        <h4 className="px-[9px] pb-[4rem] text-lg">
                           {conv.response}
                         </h4>
                       </div>

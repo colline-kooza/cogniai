@@ -33,10 +33,9 @@ export default function SearchForm() {
           response: botData.response,
           userId,
         };
-        console.log(botData);
         if (chatId) {
           const conv = {
-            ...botDataObject,
+          ...botDataObject,
             chatId,
           };
 
@@ -66,14 +65,18 @@ export default function SearchForm() {
             reset();
             setLoading(false);
           } else {
-            setLoading(true);
+            reset();
+            setLoading(false);
           }
         }
         
       } else {
+        setLoading(false);
+        reset();
         throw new Error("something went wrong");
       }
     } catch (error) {
+      setLoading(false);
       prompt = "check your internet connections";
     }
   }
@@ -85,7 +88,7 @@ export default function SearchForm() {
       >
         <LuImagePlus size={20} className="font-300 text-gray-300" />
         <textarea
-          className="w-[95%] md:w-[90%] h-[8vh] relative p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0  bg-[#131314] text-white"
+          className="w-[95%] md:w-[90%] h-[9vh] relative p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0 bg-[#131314] text-white"
           type="search"
           placeholder="Enter a prompt here"
           {...register("search")}

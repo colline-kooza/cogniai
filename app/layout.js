@@ -16,7 +16,6 @@ export default async function RootLayout({ children }) {
     <html lang="en ">
       <body class="relative bg-black" className={inter.className}>
         <ToastContainer />
-
         <main className="">{children}</main>
       </body>
     </html>
