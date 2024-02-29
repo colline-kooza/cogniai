@@ -27,17 +27,16 @@ export async function GET(request, { searchParams }) {
 }
 export async function POST(request) {
   try {
-    const { prompt, response, chatId, userId } = await request.json();
-    console.log(userId);
-    if (chatId) {
+    const { prompt, response, id , userId } = await request.json();
+    // console.log(userId);
+    if (id) {
       const conversation = await db.conversation.create({
         data: {
-          chatId,
           prompt,
           response,
+          chatId: parseInt(id)
         },
       });
-      console.log(conversation);
       return NextResponse.json(
         {
           conversation,

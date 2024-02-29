@@ -1,102 +1,16 @@
-"use client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { BiShareAlt, BiSolidVolumeFull } from "react-icons/bi";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import Image from "next/image";
-import { FaRegThumbsUp, FaThumbsDown } from "react-icons/fa";
-import { PiWarningCircleBold } from "react-icons/pi";
-import { CgMoveRight } from "react-icons/cg";
-import { LuMoreVertical } from "react-icons/lu";
-import { FcGoogle } from "react-icons/fc";
-import getSingleChat from "@/libs/getSingleChat";
-import { UserButton } from "@clerk/nextjs";
-import { useChat } from "@/components/Context";
-import EditeBtn from "@/components/EditeBtn";
+"use client"
+import DetailedPage from '@/components/DetailedComponent';
+import getSingleChat from '@/libs/getSingleChat';
+import React from 'react'
 
-export default async function DetailedPage({ params: { id } }) {
-  const { setChatId } = useChat();
-  setChatId(id);
+export default async function Page({ params: { id } }) {
   const singleChat = await getSingleChat(id);
   const conversations = singleChat.conversations;
+//  console.log(conversations)
 
   return (
-    <div className="">
-      <div className="w-[100%]overflow-hidden overflow-auto max-h-[80vh] bg-[#0C0C0C] gap-9 rounded-[20px]">
-        {conversations?.length > 0 ? (
-          conversations?.map((conv) => {
-            return (
-              <ScrollArea
-                key={conv.id}
-                className="w-[100%] px-[.8rem] py-[1rem] rounded-lg bg-[#0C0C0C]"
-              >
-                <div className="lg:min-h-[80vh] sm:h-[80vh] rounded-[20px] font-[500] text-white flex flex-col items-center">
-                  <div className="flex py-[2rem] w-[100%] ">
-                    <div className="flex items-center gap-[.8rem] min-w-[100%]">
-                      <UserButton
-                        afterSignOutUrl="/"
-                        className=" text-[25px] lg:flex md:flex  hidden"
-                      />
-                      <EditeBtn
-                        initialValue={conv.prompt}
-                        onSave={(editedPrompt) => {}}
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-between rounded-[20px] sm:gap-[2rem] py-[2rem] bg-[#011222] w-full">
-                    <div className="flex px-[1rem] lg:px-[2rem] justify-between ">
-                      <div className="relative max-w-[50px] lg:max-w-[55px] max-h-[400px] lg:max-h-[55px]">
-                        <Image
-                          className="w-auto h-auto"
-                          src="/badi.gif"
-                          alt=""
-                          width={30}
-                          height={20}
-                          objectFit="cover"
-                        />
-                      </div>
-                      <div style={{ flex: 1 }}>
-                        <h4 className="px-[9px] pb-[4rem] text-lg">
-                          {conv.response}
-                        </h4>
-                      </div>
-                    </div>
-                    <div className="flex flex-col px-[2rem] py-[.8rem] gap-5 ">
-                      <div className="w-[100%] h-[60%] bg-primaryColorbggg flex justify-between items-center   rounded-[20px] text-[13px]">
-                        <div>
-                          <h4 className="flex flex-col">Sources</h4>
-                          <a className="text-coloR" href="">
-                            collinzdev.com
-                          </a>
-                        </div>
-                        <div>
-                          <PiWarningCircleBold size={20} />
-                        </div>
-                      </div>
-                      <div className="flex gap-4 text-gray-300 justify-start">
-                        <FaRegThumbsUp />
-                        <FaThumbsDown />
-                        <CgMoveRight />
-                        <BiShareAlt />
-                        <FcGoogle />
-                        <LuMoreVertical />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ScrollArea>
-            );
-          })
-        ) : (
-          <div className="w-[100%] h-[100vh] text-center py-4 flex items-center justify-center text-orange-700 font-[400]">
-            <h1> some thing wrong happened , try Again 😒😒</h1>
-          </div>
-        )}
-      </div>
+    <div>
+      <DetailedPage id={id } conversations={conversations} singleChat={singleChat}/>
     </div>
-  );
+  )
 }

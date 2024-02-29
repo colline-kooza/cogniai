@@ -6,12 +6,14 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { VscRefresh } from "react-icons/vsc";
 import Image from "next/image";
-import { RedirectToSignIn } from "@clerk/nextjs";
+import { RedirectToSignIn, useUser } from "@clerk/nextjs";
 
 export default function page() {
+  const { user, isLoaded, isSignedIn } = useUser();
+// console.log(user)
   return (
     <div className="flex flex-col h-screen sm:px-[1rem] lg:py-[1rem] md:px-[1rem] lg:px-[2rem] bg-[#222327] lg:rounded-[2rem] md:p-[1rem] p-[1rem]">
-      <div className="lg:h-[35%] md:h-[30%] h-[40%]">
+      <div className="lg:h-[40%] md:h-[30%] h-[40%] ">
         <div className="flex flex-col gap-2 items-start flex-wrap">
           <div className="w-[100%] flex justify-between items-center">
             <Image
@@ -25,9 +27,9 @@ export default function page() {
               <VscRefresh size={24} color="lightblue" />
             </p>
           </div>
-          <div>
-            <h2 className="text-[2.5rem] text-[#e3e3e3] font-[800]">
-              Hello again
+          <div className="">
+            <h2 className="bg-gradient-to-r from-red-500 via-purple-700 to-blue-900 bg-clip-text text-transparent text-[40px] lg:text-[50px] font-[700] tracking-[.1rem] ">
+            Hello, {user?.firstName}
             </h2>
             <p className="text-[#abadb1] text-[21px] font-[500] tracking-tighter">
               Tell me what’s on your mind or pick a suggestion. I have

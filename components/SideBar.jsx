@@ -12,6 +12,7 @@ const myFont = localFont({ src: "../ProductSans-Light.ttf" });
 export default async function SideBar() {
   const { userId } = auth();
   const chats = await getChats(userId);
+  
   return (
     <div className={myFont.className} class="">
       <div className="px-[2rem] py-[10px] flex flex-col gap-5 overflow-y-auto">
@@ -26,7 +27,7 @@ export default async function SideBar() {
         </div>
         <div className="flex flex-col gap-6">
           <h3 className="text-gray-300 font-[500] text-[13px]">Recent</h3>
-          <ScrollArea className="overflow-y-auto min-h-[55vh] ">
+          <ScrollArea className="overflow-y-auto min-h-[55vh]">
             <div className="text-white font-[500] text-[14px] flex flex-col gap-3">
               {
                 chats && ( chats.map((chat) => {
@@ -35,10 +36,10 @@ export default async function SideBar() {
                       <Link
                         key={chat.id}
                         href={`/chat/DetailedPage/${chat.id}`}
-                        className="flex gap-3 items-center line-clamp-1 rounded-lg hover:bg-[#7e57c16b] hover:rounded-md hover:animate-pulse"
+                        className="flex gap-3 items-center line-clamp-1 rounded-lg  hover:rounded-md hover:animate-pulse"
                       >
                         <MdOutlineMessage
-                          className="bg-primaryColorbg text-[20px] p-[5px] shrink-0"
+                          className="bg-primaryColorbg line-clamp-1 text-[20px] p-[5px] shrink-0"
                           size={25}
                         />
                         {chat.prompt}
