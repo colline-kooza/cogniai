@@ -6,15 +6,15 @@ export async function GET(request, { searchParams }) {
     const userId = request.nextUrl.searchParams.get("userId");
     console.log(userId)
     const chats = await db.chat.findMany({
-      // where: {
-      //   userId: userId,
-      // },
+      where: {
+        userId: userId,
+      },
       include: {
         conversations: true,
       },
     });
     return NextResponse.json(chats);
-  } catch (error) {
+  } catch (error) { 
     return NextResponse.json(
       {
         message: "Failed",
