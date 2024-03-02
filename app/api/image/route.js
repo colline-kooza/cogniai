@@ -12,7 +12,7 @@ export async function POST(request) {
         },
       };
     }
-    const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
     const { search , image } = await request.json();
 
