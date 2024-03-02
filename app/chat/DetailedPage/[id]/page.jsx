@@ -10,7 +10,7 @@ export default async function Page({ params: { id } }) {
 
   return (
     <div>
-      <DetailedPage id={id } conversations={conversations} singleChat={singleChat}/>
+      <DetailedPage id={id} conversations={conversations} singleChat={singleChat}/>
     </div>
   )
 }
