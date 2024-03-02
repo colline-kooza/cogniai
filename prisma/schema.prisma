@@ -19,5 +19,6 @@ model Conversation {
   prompt  String
   response String
   chatId  Int
+  image   String ?
   chat    Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
 }

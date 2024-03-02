@@ -5,8 +5,9 @@ import { Inter } from "next/font/google";
 import SideBar from "@/components/SideBar";
 import SearchForm from "@/components/SearchForm";
 import { ChatProvider } from "@/components/Context";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "react-hot-toast";
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,10 @@ export default async function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <ChatProvider>
-        <ToastContainer />
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
         <div className="w-[100%] ">
           <NavBar />
         </div>

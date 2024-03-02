@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { toast } from "react-toastify";
+
 
 export default function DeleteBtn({ chatId }) {
   const router = useRouter();
@@ -19,11 +19,11 @@ export default function DeleteBtn({ chatId }) {
       });
       if (res.ok) {
         router.push("/chat");
-        toast("Chat deleted successfully", {
+        toast.success("Chat deleted successfully", {
           position: toast.POSITION.TOP_RIGHT,
         });
         router.push("/chat");
-        window.location.reload();
+        // window.location.reload();
       } else {
         console.log("something wrong happened");
       }
@@ -33,12 +33,12 @@ export default function DeleteBtn({ chatId }) {
 
   return (
     <Link
-      className="text-[#bbbbbb] flex gap-3 items-center tracking-[1px] text-[15px] hover:animate-bounce hover:text-blue-500"
+      className="text-[#bbbbbb] flex gap-2 items-center tracking-[1px] text-sm hover:animate-pulse hover:text-red-500"
       href=""
       onClick={handleDelte}
     >
       <RiDeleteBin6Line className="shrink-0" />{" "}
-      {loading ? "Deleting...." : "Delete"}
+      Delete
     </Link>
   );
 }
