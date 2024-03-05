@@ -17,7 +17,7 @@ import { Input } from "./ui/input";
 
 export default function SearchForm() {
   const [image, setImage] = useState("");
-  console.log(image)
+  // console.log(image)
   const { userId } = useAuth();
   const router = useRouter();
   const url = usePathname();

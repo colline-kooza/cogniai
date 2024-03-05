@@ -134,7 +134,7 @@
             })}
             {showScrollDownButton && (
               <button
-                className="fixed rounded-full text-lg bg-gray-800 hover:bg-slate-700 text-white px-3 py-3 lg:right-[40%] lg:bottom-[24%] bottom-[22%] right-[50%] shadow-xl"
+                className="fixed rounded-full text-lg bg-gray-800 hover:bg-slate-700 text-white px-3 py-3 lg:right-[40%] lg:bottom-[24%] bottom-[23%] right-[50%] shadow-xl"
                 style={{
                   transform: 'translate(50%, 50%)',
                 }}
