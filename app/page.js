@@ -2,6 +2,7 @@ import { TypedScript } from "@/components/TypedScript";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { SignIn, SignUp } from "@clerk/nextjs";
 
 export default function page() {
   return (
@@ -36,14 +37,15 @@ export default function page() {
           </h1>
           <div className="flex flex-col lg:flex-row  gap-3">
             <button 
+            
               className="py-[10px] px-[80px] bg-blue-700 text-lg font-[700] rounded-[10px] text-white hover:bg-blue-900 animate-pulse"
-              // href="/chat"
+              href="/chat"
             >
               Log in
             </button>
             <button signUp
               className="py-[10px] px-[80px] bg-blue-700 text-lg font-[700] rounded-[10px] text-white hover:bg-blue-900"
-              // href="/chat"
+              href="/chat"
             >
               Sign up
             </button>
