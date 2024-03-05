@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 export async function GET(request, { searchParams }) {
   try {
     const userId = request.nextUrl.searchParams.get("userId");
-    console.log(userId)
     const chats = await db.chat.findMany({
       where: {
         userId: userId,

@@ -8,11 +8,12 @@ import { useAuth } from "@clerk/nextjs";
 import { usePathname, useRouter } from "next/navigation";
 import { RiImageAddLine } from "react-icons/ri";
 import { UploadButton } from "@/utils/uploadThing";
-import { Input } from "./ui/input";
+// import { Input } from "./ui/input";
 import { Skeleton } from "./ui/skeleton";
 import { Sparkle } from "lucide-react";
 import { AiOutlineClose } from "react-icons/ai";
 import { toast } from "react-toastify";
+import { Input } from "./ui/input";
 
 export default function SearchForm() {
   const [image, setImage] = useState("");
@@ -267,15 +268,15 @@ export default function SearchForm() {
   </div>
   <div className="flex-grow relative">
     <div className="relative">
-      <Input
-        className={`w-full h-[9vh] p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0 bg-[#131314] text-white outline-none break-all ${
-          image ? 'pl-[4rem]' : ''
-        }`}
-        type="search"
-        placeholder="Enter a prompt here"
-        {...register("search")}
-        required
-      />
+    <Input
+  className={`w-full lg:h-[9vh] h-[6vh] text-sm p-[18px] rounded-[30px] ring ring-FormColorbggg ring-offset-0 bg-[#131314] text-white outline-none break-all ${
+    image ? 'pl-[4rem]' : ''
+  }`}
+  type="search"
+  placeholder="Enter a prompt here"
+  {...register("search")}
+  required
+/>
       {image && (
        <div className="absolute top-1/2 transform -translate-y-1/2 left-[1rem] rounded-lg">
         <div className="relative">
@@ -308,7 +309,7 @@ export default function SearchForm() {
   </div>
 </form>
 
-       <p className="text-gray-400 text-sm md:text-[10px] lg:text-[10px] flex items-center justify-center text-center">
+       <p className="text-gray-400 text-xs mt-4 lg:text-xs md:text-[10px] lg:text-[10px] flex items-center justify-center text-center">
         ColAi may display inaccurate or offensive information that doesn’t represent collinz views.
       </p>
     </div>

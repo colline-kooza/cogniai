@@ -32,13 +32,12 @@ export default function DeleteBtn({ chatId }) {
   }
 
   return (
-    <Link
-      className="text-[#bbbbbb] flex gap-2 items-center tracking-[1px] text-sm hover:animate-pulse hover:text-red-500"
-      href=""
+    <button
+      className="text-white z-50 flex gap-2 items-center tracking-[1px] text-sm hover:animate-pulse hover:text-gray-500"
       onClick={handleDelte}
     >
       <RiDeleteBin6Line className="shrink-0" />{" "}
       Delete
-    </Link>
+    </button>
   );
 }

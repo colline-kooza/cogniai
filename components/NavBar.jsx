@@ -8,6 +8,7 @@ import SideBarBtn from "./SideBarBtn";
 import Link from "next/link";
 import DropDown from "./DropDown";
 import getChats from "@/libs/getChats";
+// import DropDownSide from "./DropDownSide";
 
 export default async function NavBar() {
   const { userId } = auth();
@@ -32,13 +33,8 @@ export default async function NavBar() {
           New +
         </Link>
         <div className="lg:hidden md:hidden block">
-          <DropDown />
+        {/* <DropDownSide chatId={chat.id} className="md:block hidden lg:block z-50 " /> */}
         </div>
-
-        <GiBackwardTime className="lg:flex md:flex  text-[25px] hidden" />
-        <PiPuzzlePieceBold className="lg:flex md:flex  text-[25px] hidden" />
-        <BsFillPatchQuestionFill className="lg:flex md:flex  text-[25px] hidden" />
-        <FiSettings className="lg:flex md:flex  text-[25px] hidden" />
         <CgMenuGridR className="lg:flex md:flex  text-[25px] hidden" />
         <UserButton afterSignOutUrl="/" className=" text-[25px] " />
       </div>

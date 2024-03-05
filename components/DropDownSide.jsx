@@ -11,14 +11,15 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 export default function DropDownSide({ chatId }) {
   
   return (
-  <>
-  <Popover>
+  <div className="">
+  <Popover className="z-50">
   <PopoverTrigger> <GrMoreVertical /></PopoverTrigger>
-  <PopoverContent className="text-white z-50  border-none bg-[#000000d6] shadow-2xl rounded-lg">
+  <PopoverContent className="text-white z-[10000]  border-none  shadow-2xl rounded-lg bg-gray-900 w-[100%]">
   <DeleteBtn chatId={chatId} />
+ 
   </PopoverContent>
 </Popover>
 
-  </>
+  </div>
   );
 }

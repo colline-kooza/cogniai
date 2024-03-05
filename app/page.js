@@ -35,18 +35,18 @@ export default function page() {
             Get started
           </h1>
           <div className="flex flex-col lg:flex-row  gap-3">
-            <Link
+            <button 
               className="py-[10px] px-[80px] bg-blue-700 text-lg font-[700] rounded-[10px] text-white hover:bg-blue-900 animate-pulse"
-              href="/chat"
+              // href="/chat"
             >
               Log in
-            </Link>
-            <Link
+            </button>
+            <button signUp
               className="py-[10px] px-[80px] bg-blue-700 text-lg font-[700] rounded-[10px] text-white hover:bg-blue-900"
-              href="/chat"
+              // href="/chat"
             >
               Sign up
-            </Link>
+            </button>
           </div>
         </div>
       </div>

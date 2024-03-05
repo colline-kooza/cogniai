@@ -87,7 +87,7 @@
                               return (
                                 <h2
                                   key={index}
-                                  className="px-[9px] pb-[1.4rem] lg:text-lg font-normal leading-7 text-sm"
+                                  className="px-[9px] pb-[1.4rem] lg:text-lg font-normal leading-7 text-lg"
                                 >
                                   {section}
                                 </h2>
@@ -96,7 +96,7 @@
                               return (
                                 <p
                                   key={index}
-                                  className="px-[9px] mb-2 text-sm lg:text-lg font-bold text-blue-100"
+                                  className="px-[9px] mb-2 text-lg lg:text-lg font-bold text-blue-100"
                                 >
                                   {section}
                                 </p>
