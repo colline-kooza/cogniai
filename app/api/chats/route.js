@@ -11,6 +11,10 @@ export async function GET(request, { searchParams }) {
       include: {
         conversations: true,
       },
+    } ,{
+      orderBy: {
+       createdAt : "desc" 
+      },
     });
     return NextResponse.json(chats);
   } catch (error) { 

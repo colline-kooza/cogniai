@@ -13,6 +13,8 @@ model Chat {
   id            Int         @id @default(autoincrement()) @map(name: "id")
   prompt        String
   conversations Conversation[] 
+  createdAt    DateTime     @default(now()) @map("createdAt")
+  updatedAt    DateTime     @updatedAt @map("updatedAt")
 }
 model Conversation {
   id      Int      @id @default(autoincrement())

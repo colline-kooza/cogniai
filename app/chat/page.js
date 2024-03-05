@@ -31,7 +31,7 @@ export default function page() {
             <h2 className="bg-gradient-to-r from-red-500 via-purple-700 to-blue-900 bg-clip-text text-transparent text-[50px] lg:text-[50px] font-[700] tracking-[.1rem] ">
             Hello, {user?.firstName}
             </h2>
-            <h1 className="text-[#444746] lg:leading-2 leading-[43px] text-[2rem] lg:text-[3rem] font-[500] ">
+            <h1 className="text-[#444746] lg:leading-2 leading-[43px] text-[2.5rem] lg:text-[3rem] font-[500] ">
             How can I help you today?
             </h1>
           </div>
