@@ -303,7 +303,7 @@ export default function SearchForm() {
   <div className="absolute right-[17%] md:right-[7%] lg:right-[7%] top-[5 0px] lg:top-[25px]">
     {loading && (
       <div className="">
-        <Image className="w-[40px] h-[40px]" src="/loading.gif" alt="" width={30} height={20} />
+        <Image className="w-[30px] h-[30px]" src="/loading.gif" alt="" width={30} height={20} />
       </div>
     )}
   </div>
