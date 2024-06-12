@@ -8,7 +8,8 @@
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "turbo": "next dev --turbo"
+    "turbo": "next dev --turbo",
+    "preview": "next build && next start"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.25.7",

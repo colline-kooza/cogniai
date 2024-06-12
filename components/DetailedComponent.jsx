@@ -96,7 +96,7 @@
                               return (
                                 <p
                                   key={index}
-                                  className="px-[9px] mb-2 text-lg lg:text-lg font-bold text-blue-100"
+                                  className="px-[9px] mb-2 text-sm lg:text-sm font-bold text-blue-100"
                                 >
                                   {section}
                                 </p>
